@@ -7,11 +7,268 @@
   <meta http-equiv="pragma" content="no-cache">
   <meta http-equiv="expires" content="-1">
   <meta name="robots" content="noindex">
-  <title>Sass dev environment</title>
+  <meta name="author" content="Giulia Alfonsi @electric_g">
+  <title>CSS Camera Shutter</title>
   <link rel="stylesheet" href="css/style.pre.css">
+  <style>
+/* style for this demo page, not for the effect */
+body {
+  font-family: sans-serif;
+}
+.example {
+  display: inline-block;
+  margin: 20px;
+  height: 300px;
+  width: 300px;
+}
+.example .camera-shutter {
+  background: url(../pic.jpg) no-repeat;
+}
+h1, h2, h3 {
+  text-align: center;
+}
+
+  </style>
 </head>
 <body>
 
+<h1>CSS Camera Shutter</h1>
+
+<section class="animation">
+  <h2>Animations</h2>
+
+  <div class="example">
+    <h3>Animation from f1 to f32</h3>
+    <div class="camera-shutter camera-shutter--f1 camera-shutter--theme1 camera-shutter--animation1">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <h3>Animation from f2 to f8</h3>
+    <div class="camera-shutter camera-shutter--f2 camera-shutter--theme1 camera-shutter--animation2">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <h3>Animation Theme 1 from f1 to f64</h3>
+    <div class="camera-shutter camera-shutter--f1 camera-shutter--theme1 camera-shutter--animation3">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="example">
+    <h3>Animation Theme 2 from f1 to f16</h3>
+    <div class="camera-shutter camera-shutter--f1 camera-shutter--theme2 camera-shutter--animation4">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="aperture">
+  <h2>Aperture</h2>
+
+  <div class="example">
+    <h3>f1</h3>
+    <div class="camera-shutter camera-shutter--f1 camera-shutter--theme1">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <h3>f8</h3>
+    <div class="camera-shutter camera-shutter--f8 camera-shutter--theme1">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <h3>f16</h3>
+    <div class="camera-shutter camera-shutter--f16 camera-shutter--theme1">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <h3>f32</h3>
+    <div class="camera-shutter camera-shutter--f32 camera-shutter--theme1">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <h3>f64</h3>
+    <div class="camera-shutter camera-shutter--f64 camera-shutter--theme1">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <h3>f256</h3>
+    <div class="camera-shutter camera-shutter--f256 camera-shutter--theme1">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="themes">
+  <h2>Themes</h2>
+  
+  <div class="example">
+    <h3>Theme 1</h3>
+    <div class="camera-shutter camera-shutter--f2 camera-shutter--theme1">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="example">
+    <h3>Theme 2</h3>
+    <div class="camera-shutter camera-shutter--f16 camera-shutter--theme2 camera-shutter--open">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="example">
+    <h3>Theme 3</h3>
+    <div class="camera-shutter camera-shutter--f8 camera-shutter--theme3">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="example">
+    <h3>Theme 4</h3>
+    <div class="camera-shutter camera-shutter--f16 camera-shutter--theme4">
+      <div class="camera-shutter__lens">
+        <div class="camera-shutter__triangles">
+          <div class="camera-shutter__triangle camera-shutter__triangle--1"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--2"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--3"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--4"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--5"></div>
+          <div class="camera-shutter__triangle camera-shutter__triangle--6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <script>
 (function() {
@@ -22,5 +279,7 @@
   }
 })();
 </script>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,174 @@
+$hover: ".camera-shutter--open"; // class or pseudoclass to use for the open status or animation
+
+.camera-shutter {
+  border: 3px solid #000;
+  border-radius: 100%;
+  height: 100%;
+  width: 100%;
+
+  &, & * {
+    &, &:after, &:before {
+      box-sizing: border-box;
+    }
+  }
+
+  &__lens {
+    border-radius: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: rotate(0);
+    width: 100%;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #000); /* scale transform and overflow:hidden on Safari http://stackoverflow.com/a/21088507/471720 */
+  }
+  
+  &__triangles {
+    height: 100%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  
+  &__triangle {
+    background: #000;
+    border: 3px solid #FFF;
+    height: 100%;
+    position: absolute;
+    transform-origin: 100% 100%;
+    width: 100%;
+  }
+  
+  &__lens,
+  &__triangle {
+    transition: transform .3s ease-out;
+  }
+
+  &#{$hover} &__lens {
+    transform: rotate(30deg);
+  }
+
+  // create a global variable for the namespace to use outside this scope
+  $ns: & !global;
+}
+
+
+
+/* === Aperture */
+$aperture: (
+  f1: 0,
+  f1_4: 1,
+  f2: 2,
+  f2_8: 3,
+  f4: 4,
+  f5_6: 5,
+  f8: 6,
+  f11: 7,
+  f16: 8,
+  f22: 9,
+  f32: 10,
+  f45: 11,
+  f64: 12,
+  f90: 13,
+  f128: 14,
+  f180: 15,
+  f256: 16
+);
+$aperture-max: nth(nth($aperture, -1), -1);
+$aperture-d: 60 / $aperture-max;
+
+@each $f-no, $av in $aperture {
+  #{$ns}--#{$f-no} {
+    $a: 45deg;
+    $b: $av * $aperture-d;
+    @for $i from 1 through 6 {
+      #{$ns}__triangle--#{$i} {
+        transform:  rotate($a) skew(15deg, 15deg) translate(1% * $b, -1% * $b);
+      }
+      $a: $a + 60deg;
+    }
+  }
+}
+
+
+
+/* === Themes */
+
+/* theme 1 */
+#{$ns}--theme1 {
+  #{$ns}__triangle {
+    background: #FFF;
+    border: 0 none;
+    padding: 3px;
+    outline: 1px solid #FFF;
+
+    &:after {
+      background: #000;
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+/* theme 2 */
+#{$ns}--theme2 {
+  #{$ns}__triangle {
+    background: transparent;
+    border: 0 none;
+    padding: 0;
+
+    &:after {
+      background: #000;
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  #{$ns}__lens,
+  #{$ns}__triangle {
+    transition: all 1s ease-out;
+  }
+  &#{$hover} #{$ns}__triangle {
+    padding: 4px;
+  }
+}
+
+$rainbow: (#F00, #F90, #FF0, #0F0, #00F, #F0F);
+/* theme 3 */
+#{$ns}--theme3 {
+  border: 0 none;
+
+  #{$ns}__triangle {
+    border: 0 none;
+  }
+  @for $i from 1 through 6 {
+    #{$ns}__triangle--#{$i} {
+      background: nth($rainbow, $i);
+    }
+  }
+}
+
+/* theme 4 */
+#{$ns}--theme4 {
+  #{$ns}__triangle {
+    border: 2px solid #000;
+  }
+  @for $i from 1 through 6 {
+    #{$ns}__triangle--#{$i} {
+      background: nth($rainbow, $i);
+    }
+  }
+}
+
+
+
+/* === Speed */
+$speed: (1000, 500, 250, 125, 69, 30, 15, 8, 4, 2, 1);
+$speed-d: 10s;
+
+@each $s in $speed {
+  #{$ns}--speed#{$s} {
+    transition: transform ($speed-d / $s) ease-out;
+  }
+}

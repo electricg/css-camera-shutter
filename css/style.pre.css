@@ -1,0 +1,720 @@
+.camera-shutter {
+  border: 3px solid #000;
+  border-radius: 100%;
+  height: 100%;
+  width: 100%;
+}
+.camera-shutter, .camera-shutter:after, .camera-shutter:before, .camera-shutter *, .camera-shutter *:after, .camera-shutter *:before {
+  box-sizing: border-box;
+}
+.camera-shutter__lens {
+  border-radius: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
+  width: 100%;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #000);
+  /* scale transform and overflow:hidden on Safari http://stackoverflow.com/a/21088507/471720 */
+}
+.camera-shutter__triangles {
+  height: 100%;
+  position: relative;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+}
+.camera-shutter__triangle {
+  background: #000;
+  border: 3px solid #FFF;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  width: 100%;
+}
+.camera-shutter__lens, .camera-shutter__triangle {
+  -webkit-transition: -webkit-transform .3s ease-out;
+          transition: transform .3s ease-out;
+}
+.camera-shutter.camera-shutter--open .camera-shutter__lens {
+  -webkit-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+/* === Aperture */
+.camera-shutter--f1 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(0%, 0%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(0%, 0%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(0%, 0%);
+}
+.camera-shutter--f1 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(0%, 0%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(0%, 0%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(0%, 0%);
+}
+.camera-shutter--f1 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(0%, 0%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(0%, 0%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(0%, 0%);
+}
+.camera-shutter--f1 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(0%, 0%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(0%, 0%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(0%, 0%);
+}
+.camera-shutter--f1 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(0%, 0%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(0%, 0%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(0%, 0%);
+}
+.camera-shutter--f1 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(0%, 0%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(0%, 0%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(0%, 0%);
+}
+
+.camera-shutter--f1_4 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+}
+.camera-shutter--f1_4 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+}
+.camera-shutter--f1_4 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+}
+.camera-shutter--f1_4 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+}
+.camera-shutter--f1_4 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+}
+.camera-shutter--f1_4 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(3.75%, -3.75%);
+}
+
+.camera-shutter--f2 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+}
+.camera-shutter--f2 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+}
+.camera-shutter--f2 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+}
+.camera-shutter--f2 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+}
+.camera-shutter--f2 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+}
+.camera-shutter--f2 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(7.5%, -7.5%);
+}
+
+.camera-shutter--f2_8 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+}
+.camera-shutter--f2_8 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+}
+.camera-shutter--f2_8 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+}
+.camera-shutter--f2_8 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+}
+.camera-shutter--f2_8 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+}
+.camera-shutter--f2_8 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(11.25%, -11.25%);
+}
+
+.camera-shutter--f4 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(15%, -15%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(15%, -15%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(15%, -15%);
+}
+.camera-shutter--f4 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(15%, -15%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(15%, -15%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(15%, -15%);
+}
+.camera-shutter--f4 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(15%, -15%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(15%, -15%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(15%, -15%);
+}
+.camera-shutter--f4 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(15%, -15%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(15%, -15%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(15%, -15%);
+}
+.camera-shutter--f4 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(15%, -15%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(15%, -15%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(15%, -15%);
+}
+.camera-shutter--f4 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(15%, -15%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(15%, -15%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(15%, -15%);
+}
+
+.camera-shutter--f5_6 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+}
+.camera-shutter--f5_6 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+}
+.camera-shutter--f5_6 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+}
+.camera-shutter--f5_6 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+}
+.camera-shutter--f5_6 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+}
+.camera-shutter--f5_6 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(18.75%, -18.75%);
+}
+
+.camera-shutter--f8 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+}
+.camera-shutter--f8 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+}
+.camera-shutter--f8 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+}
+.camera-shutter--f8 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+}
+.camera-shutter--f8 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+}
+.camera-shutter--f8 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(22.5%, -22.5%);
+}
+
+.camera-shutter--f11 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+}
+.camera-shutter--f11 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+}
+.camera-shutter--f11 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+}
+.camera-shutter--f11 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+}
+.camera-shutter--f11 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+}
+.camera-shutter--f11 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(26.25%, -26.25%);
+}
+
+.camera-shutter--f16 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(30%, -30%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(30%, -30%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(30%, -30%);
+}
+.camera-shutter--f16 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(30%, -30%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(30%, -30%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(30%, -30%);
+}
+.camera-shutter--f16 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(30%, -30%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(30%, -30%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(30%, -30%);
+}
+.camera-shutter--f16 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(30%, -30%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(30%, -30%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(30%, -30%);
+}
+.camera-shutter--f16 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(30%, -30%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(30%, -30%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(30%, -30%);
+}
+.camera-shutter--f16 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(30%, -30%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(30%, -30%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(30%, -30%);
+}
+
+.camera-shutter--f22 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+}
+.camera-shutter--f22 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+}
+.camera-shutter--f22 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+}
+.camera-shutter--f22 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+}
+.camera-shutter--f22 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+}
+.camera-shutter--f22 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(33.75%, -33.75%);
+}
+
+.camera-shutter--f32 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+}
+.camera-shutter--f32 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+}
+.camera-shutter--f32 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+}
+.camera-shutter--f32 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+}
+.camera-shutter--f32 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+}
+.camera-shutter--f32 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(37.5%, -37.5%);
+}
+
+.camera-shutter--f45 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+}
+.camera-shutter--f45 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+}
+.camera-shutter--f45 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+}
+.camera-shutter--f45 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+}
+.camera-shutter--f45 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+}
+.camera-shutter--f45 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(41.25%, -41.25%);
+}
+
+.camera-shutter--f64 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(45%, -45%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(45%, -45%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(45%, -45%);
+}
+.camera-shutter--f64 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(45%, -45%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(45%, -45%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(45%, -45%);
+}
+.camera-shutter--f64 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(45%, -45%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(45%, -45%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(45%, -45%);
+}
+.camera-shutter--f64 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(45%, -45%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(45%, -45%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(45%, -45%);
+}
+.camera-shutter--f64 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(45%, -45%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(45%, -45%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(45%, -45%);
+}
+.camera-shutter--f64 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(45%, -45%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(45%, -45%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(45%, -45%);
+}
+
+.camera-shutter--f90 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+}
+.camera-shutter--f90 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+}
+.camera-shutter--f90 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+}
+.camera-shutter--f90 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+}
+.camera-shutter--f90 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+}
+.camera-shutter--f90 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(48.75%, -48.75%);
+}
+
+.camera-shutter--f128 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+}
+.camera-shutter--f128 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+}
+.camera-shutter--f128 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+}
+.camera-shutter--f128 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+}
+.camera-shutter--f128 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+}
+.camera-shutter--f128 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(52.5%, -52.5%);
+}
+
+.camera-shutter--f180 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+}
+.camera-shutter--f180 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+}
+.camera-shutter--f180 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+}
+.camera-shutter--f180 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+}
+.camera-shutter--f180 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+}
+.camera-shutter--f180 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(56.25%, -56.25%);
+}
+
+.camera-shutter--f256 .camera-shutter__triangle--1 {
+  -webkit-transform: rotate(45deg) skew(15deg, 15deg) translate(60%, -60%);
+      -ms-transform: rotate(45deg) skew(15deg, 15deg) translate(60%, -60%);
+          transform: rotate(45deg) skew(15deg, 15deg) translate(60%, -60%);
+}
+.camera-shutter--f256 .camera-shutter__triangle--2 {
+  -webkit-transform: rotate(105deg) skew(15deg, 15deg) translate(60%, -60%);
+      -ms-transform: rotate(105deg) skew(15deg, 15deg) translate(60%, -60%);
+          transform: rotate(105deg) skew(15deg, 15deg) translate(60%, -60%);
+}
+.camera-shutter--f256 .camera-shutter__triangle--3 {
+  -webkit-transform: rotate(165deg) skew(15deg, 15deg) translate(60%, -60%);
+      -ms-transform: rotate(165deg) skew(15deg, 15deg) translate(60%, -60%);
+          transform: rotate(165deg) skew(15deg, 15deg) translate(60%, -60%);
+}
+.camera-shutter--f256 .camera-shutter__triangle--4 {
+  -webkit-transform: rotate(225deg) skew(15deg, 15deg) translate(60%, -60%);
+      -ms-transform: rotate(225deg) skew(15deg, 15deg) translate(60%, -60%);
+          transform: rotate(225deg) skew(15deg, 15deg) translate(60%, -60%);
+}
+.camera-shutter--f256 .camera-shutter__triangle--5 {
+  -webkit-transform: rotate(285deg) skew(15deg, 15deg) translate(60%, -60%);
+      -ms-transform: rotate(285deg) skew(15deg, 15deg) translate(60%, -60%);
+          transform: rotate(285deg) skew(15deg, 15deg) translate(60%, -60%);
+}
+.camera-shutter--f256 .camera-shutter__triangle--6 {
+  -webkit-transform: rotate(345deg) skew(15deg, 15deg) translate(60%, -60%);
+      -ms-transform: rotate(345deg) skew(15deg, 15deg) translate(60%, -60%);
+          transform: rotate(345deg) skew(15deg, 15deg) translate(60%, -60%);
+}
+
+/* === Themes */
+/* theme 1 */
+.camera-shutter--theme1 .camera-shutter__triangle {
+  background: #FFF;
+  border: 0 none;
+  padding: 3px;
+  outline: 1px solid #FFF;
+}
+.camera-shutter--theme1 .camera-shutter__triangle:after {
+  background: #000;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+/* theme 2 */
+.camera-shutter--theme2 .camera-shutter__triangle {
+  background: transparent;
+  border: 0 none;
+  padding: 0;
+}
+.camera-shutter--theme2 .camera-shutter__triangle:after {
+  background: #000;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.camera-shutter--theme2 .camera-shutter__lens,
+.camera-shutter--theme2 .camera-shutter__triangle {
+  -webkit-transition: all 1s ease-out;
+          transition: all 1s ease-out;
+}
+.camera-shutter--theme2.camera-shutter--open .camera-shutter__triangle {
+  padding: 4px;
+}
+
+/* theme 3 */
+.camera-shutter--theme3 {
+  border: 0 none;
+}
+.camera-shutter--theme3 .camera-shutter__triangle {
+  border: 0 none;
+}
+.camera-shutter--theme3 .camera-shutter__triangle--1 {
+  background: #F00;
+}
+.camera-shutter--theme3 .camera-shutter__triangle--2 {
+  background: #F90;
+}
+.camera-shutter--theme3 .camera-shutter__triangle--3 {
+  background: #FF0;
+}
+.camera-shutter--theme3 .camera-shutter__triangle--4 {
+  background: #0F0;
+}
+.camera-shutter--theme3 .camera-shutter__triangle--5 {
+  background: #00F;
+}
+.camera-shutter--theme3 .camera-shutter__triangle--6 {
+  background: #F0F;
+}
+
+/* theme 4 */
+.camera-shutter--theme4 .camera-shutter__triangle {
+  border: 2px solid #000;
+}
+.camera-shutter--theme4 .camera-shutter__triangle--1 {
+  background: #F00;
+}
+.camera-shutter--theme4 .camera-shutter__triangle--2 {
+  background: #F90;
+}
+.camera-shutter--theme4 .camera-shutter__triangle--3 {
+  background: #FF0;
+}
+.camera-shutter--theme4 .camera-shutter__triangle--4 {
+  background: #0F0;
+}
+.camera-shutter--theme4 .camera-shutter__triangle--5 {
+  background: #00F;
+}
+.camera-shutter--theme4 .camera-shutter__triangle--6 {
+  background: #F0F;
+}
+
+/* === Speed */
+.camera-shutter--speed1000 {
+  -webkit-transition: -webkit-transform 0.01s ease-out;
+          transition: transform 0.01s ease-out;
+}
+
+.camera-shutter--speed500 {
+  -webkit-transition: -webkit-transform 0.02s ease-out;
+          transition: transform 0.02s ease-out;
+}
+
+.camera-shutter--speed250 {
+  -webkit-transition: -webkit-transform 0.04s ease-out;
+          transition: transform 0.04s ease-out;
+}
+
+.camera-shutter--speed125 {
+  -webkit-transition: -webkit-transform 0.08s ease-out;
+          transition: transform 0.08s ease-out;
+}
+
+.camera-shutter--speed69 {
+  -webkit-transition: -webkit-transform 0.14493s ease-out;
+          transition: transform 0.14493s ease-out;
+}
+
+.camera-shutter--speed30 {
+  -webkit-transition: -webkit-transform 0.33333s ease-out;
+          transition: transform 0.33333s ease-out;
+}
+
+.camera-shutter--speed15 {
+  -webkit-transition: -webkit-transform 0.66667s ease-out;
+          transition: transform 0.66667s ease-out;
+}
+
+.camera-shutter--speed8 {
+  -webkit-transition: -webkit-transform 1.25s ease-out;
+          transition: transform 1.25s ease-out;
+}
+
+.camera-shutter--speed4 {
+  -webkit-transition: -webkit-transform 2.5s ease-out;
+          transition: transform 2.5s ease-out;
+}
+
+.camera-shutter--speed2 {
+  -webkit-transition: -webkit-transform 5s ease-out;
+          transition: transform 5s ease-out;
+}
+
+.camera-shutter--speed1 {
+  -webkit-transition: -webkit-transform 10s ease-out;
+          transition: transform 10s ease-out;
+}
+
+/*# sourceMappingURL=style.pre.css.map */
